@@ -1,4 +1,6 @@
-import React from 'react';
+import homeImg1 from '../assets/images/home-img1.png';
+import homeImg2 from '../assets/images/home-img2.png';
+import homeImg3 from '../assets/images/home-img3.png';
 
 const Home = () => {
     return (
@@ -55,6 +57,29 @@ const Home = () => {
                                         Patient Satisfaction
                                     </p>
                                 </div>
+                            </div>
+                        </div>
+
+                        {/* =====img===== */}
+                        <div className='flex gap-[30px] justify-end'>
+                            <div>
+                                <img
+                                    className='w-full rounded-lg'
+                                    src={homeImg1}
+                                    alt='home_img'
+                                />
+                            </div>
+                            <div className='mt-[12px]'>
+                                <img
+                                    className='w-full mb-[30px] rounded-lg'
+                                    src={homeImg2}
+                                    alt='home_img'
+                                />
+                                <img
+                                    className='w-full rounded-lg'
+                                    src={homeImg3}
+                                    alt='home_img'
+                                />
                             </div>
                         </div>
                     </div>
