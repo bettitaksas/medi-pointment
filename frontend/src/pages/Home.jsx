@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { BsArrowRight } from 'react-icons/bs';
 
 import About from '../components/About/About.jsx';
+import ServicesList from '../components/Services/ServicesList';
 
 const Home = () => {
     return (
@@ -205,6 +206,7 @@ const Home = () => {
                             elit. Natus quaerat cumque fugit.
                         </p>
                     </div>
+                    <ServicesList />
                 </div>
             </section>
         </>
