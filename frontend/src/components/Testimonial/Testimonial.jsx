@@ -9,7 +9,7 @@ const Testimonial = () => {
         {
             name: 'Jessica Martinez',
             stars: 5,
-            content: 'I have taken medical services from them. They treat so well and they are providing the best medical services.',
+            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula aliquam justo, a dignissim arcu consectetur vel. Quisque suscipit mauris vel erat gravida, eget condimentum augue euismod.',
         },
         {
             name: 'Robert Taylor',
