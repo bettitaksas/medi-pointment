@@ -4,8 +4,11 @@ import homeImg3 from '../assets/images/home-img3.png';
 import icon1 from "../assets/images/icon1.png";
 import icon2 from "../assets/images/icon2.png";
 import icon3 from "../assets/images/icon3.png";
+
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
+
+import About from '../components/About/About.jsx';
 
 const Home = () => {
     return (
@@ -178,6 +181,10 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            <About />
+
+
         </>
     );
 };
