@@ -7,13 +7,15 @@ import icon3 from '../assets/images/icon3.png';
 import featureImg from '../assets/images/feature-img.png';
 import videoIcon from '../assets/images/video-icon.png';
 import avatarIcon from '../assets/images/avatar-icon.png';
+import faqImg from '../assets/images/faq-img.png';
 
 import { Link } from 'react-router-dom';
 import { BsArrowRight } from 'react-icons/bs';
 
 import About from '../components/About/About.jsx';
 import ServicesList from '../components/Services/ServicesList';
-import DoctorsList from "../components/Doctors/DoctorsList";
+import DoctorsList from '../components/Doctors/DoctorsList';
+import FaqList from '../components/Faq/FaqList';
 
 const Home = () => {
     return (
@@ -301,6 +303,25 @@ const Home = () => {
                     </div>
 
                     <DoctorsList />
+                </div>
+            </section>
+
+            {/* =====faq section===== */}
+            <section>
+                <div className='container'>
+                    <div className='flex justify-between gap-[50px] lg:gap-0'>
+                        <div className='w-1/2 hidden md:block'>
+                            <img src={faqImg} alt='' />
+                        </div>
+
+                        <div className='w-full md:w-1/2'>
+                            <h2 className='heading'>
+                                Most common questions by our patients
+                            </h2>
+
+                            <FaqList />
+                        </div>
+                    </div>
                 </div>
             </section>
         </>
