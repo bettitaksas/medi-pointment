@@ -7,12 +7,16 @@ import icon3 from '../assets/images/icon3.png';
 import featureImg from '../assets/images/feature-img.png';
 import videoIcon from '../assets/images/video-icon.png';
 import avatarIcon from '../assets/images/avatar-icon.png';
+import faqImg from '../assets/images/faq-img.png';
 
 import { Link } from 'react-router-dom';
 import { BsArrowRight } from 'react-icons/bs';
 
 import About from '../components/About/About.jsx';
 import ServicesList from '../components/Services/ServicesList';
+import DoctorsList from '../components/Doctors/DoctorsList';
+import FaqList from '../components/Faq/FaqList';
+import Testimonial from '../components/Testimonial/Testimonial';
 
 const Home = () => {
     return (
@@ -271,7 +275,11 @@ const Home = () => {
                                 </div>
 
                                 <div className='flex items-center gap-[6px] lg:gap-[10px] mt-2 lg:mt-[18px]'>
-                                    <img src={avatarIcon} alt='' className='w-[30px] rounded-full'/>
+                                    <img
+                                        src={avatarIcon}
+                                        alt=''
+                                        className='w-[30px] rounded-full'
+                                    />
                                     <h4 className='text-[10px] leading-3 lg:text-[16px] lg:leading-[22px] font-[700] text-headingColor'>
                                         Emily Johnson
                                     </h4>
@@ -279,6 +287,60 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* =====doctors section===== */}
+            <section>
+                <div className='container'>
+                    <div className='xl:w-[470px] mx-auto'>
+                        <h2 className='heading text-center'>
+                            Our great doctors
+                        </h2>
+                        <p className='text__para text-center'>
+                            World-class care for everyone. Our health System
+                            offers unmatched, expert health care.
+                        </p>
+                    </div>
+
+                    <DoctorsList />
+                </div>
+            </section>
+
+            {/* =====faq section===== */}
+            <section>
+                <div className='container'>
+                    <div className='flex justify-between gap-[50px] lg:gap-0'>
+                        <div className='w-1/2 hidden md:block mr-[20px]'>
+                            <img src={faqImg} alt='' className='rounded-lg' />
+                        </div>
+
+                        <div className='w-full md:w-1/2'>
+                            <h2 className='heading'>
+                                Most common questions by our patients
+                            </h2>
+
+                            <FaqList />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* =====testimonial===== */}
+
+            <section>
+                <div className='container'>
+                    <div className='xl:w-[470px] mx-auto'>
+                        <h2 className='heading text-center'>
+                            Our patients said about us
+                        </h2>
+                        <p className='text__para text-center'>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. Natus quaerat cumque.
+                        </p>
+                    </div>
+
+                    <Testimonial />
                 </div>
             </section>
         </>
