@@ -1,4 +1,5 @@
 import Testimonial from '../../components/Testimonial/Testimonial';
+import DoctorCard from "../../components/Doctors/DoctorCard";
 
 const Doctors = () => {
     return (
@@ -22,7 +23,7 @@ const Doctors = () => {
             <section>
                 <div className='container'>
                     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5'>
-                        doctors
+                    <DoctorCard />
                     </div>
                 </div>
             </section>
