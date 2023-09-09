@@ -1,6 +1,11 @@
 import homeImg1 from '../assets/images/home-img1.png';
 import homeImg2 from '../assets/images/home-img2.png';
 import homeImg3 from '../assets/images/home-img3.png';
+import icon1 from "../assets/images/icon1.png";
+import icon2 from "../assets/images/icon2.png";
+import icon3 from "../assets/images/icon3.png";
+import { Link } from "react-router-dom";
+import { BsArrowRight } from "react-icons/bs";
 
 const Home = () => {
     return (
@@ -81,6 +86,94 @@ const Home = () => {
                                     alt='home_img'
                                 />
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* =====how it works section===== */}
+            <section>
+                <div className='container '>
+                    <div className='lg:w-[450px] mx-auto'>
+                        <h2 className='heading text-center'>
+                            Our patients receive the finest medical care.
+                        </h2>
+                        <p className='text__para text-center'>
+                            Professional medical services for everyone. Our
+                            health System offers unmatched, expert health care.
+                        </p>
+                    </div>
+                </div>
+
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-[30px] mt-[30px] lg:mt-[55px]'>
+                    <div className='py-[30px] px-5 '>
+                        <div className='flex items-center justify-center'>
+                            <img src={icon1} alt='' className='w-[200px] rounded-lg'/>
+                        </div>
+
+                        <div className='mt-[30px]'>
+                            <h2 className='text-[26px] leading-9 text-headingColor font-[700] text-center'>
+                                Find a Doctor
+                            </h2>
+                            <p className='text-[16px] leading-7 text-textColor font-[400] mt-4 text-center'>
+                                World-class care for everyone. Our health System
+                                offers unmatched, expert health care. From the
+                                lab to the clinic.
+                            </p>
+
+                            <Link
+                                to='/doctors'
+                                className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-buttonBgColor hover:border-none'
+                            >
+                                <BsArrowRight className='group-hover:text-white w-6 h-5' />
+                            </Link>
+                        </div>
+                    </div>
+
+                    <div className='py-[30px] px-5 '>
+                        <div className='flex items-center justify-center'>
+                            <img src={icon2} alt='' className='w-[200px] rounded-lg'/>
+                        </div>
+
+                        <div className='mt-[30px]'>
+                            <h2 className='text-[26px] leading-9 text-headingColor font-[700] text-center'>
+                                Find a Location
+                            </h2>
+                            <p className='text-[16px] leading-7 text-textColor font-[400] mt-4 text-center'>
+                                World-class care for everyone. Our health System
+                                offers unmatched, expert health care. From the
+                                lab to the clinic.
+                            </p>
+
+                            <Link
+                                to='/doctors'
+                                className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-buttonBgColor hover:border-none'
+                            >
+                                <BsArrowRight className='group-hover:text-white w-6 h-5' />
+                            </Link>
+                        </div>
+                    </div>
+                    <div className='py-[30px] px-5 '>
+                        <div className='flex items-center justify-center'>
+                            <img src={icon3} alt='' className='w-[200px] rounded-lg'/>
+                        </div>
+
+                        <div className='mt-[30px]'>
+                            <h2 className='text-[26px] leading-9 text-headingColor font-[700] text-center'>
+                                Book Appointment
+                            </h2>
+                            <p className='text-[16px] leading-7 text-textColor font-[400] mt-4 text-center'>
+                                World-class care for everyone. Our health System
+                                offers unmatched, expert health care. From the
+                                lab to the clinic.
+                            </p>
+
+                            <Link
+                                to='/doctors'
+                                className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-buttonBgColor hover:border-none'
+                            >
+                                <BsArrowRight className='group-hover:text-white w-6 h-5' />
+                            </Link>
                         </div>
                     </div>
                 </div>
