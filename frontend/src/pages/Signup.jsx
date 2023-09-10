@@ -41,10 +41,10 @@ const Signup = () => {
             <div className='max-w-[1170px] mx-auto '>
                 <div className='grid grid-cols-1 lg:grid-cols-2 '>
                     {/* =====img box===== */}
-                    <div className='hidden lg:block bg-primaryColor rounded-l-lg'>
-                        <figure className='rounded-l-lg'>
+                    <div className='hidden lg:block rounded-lg'>
+                        <figure className='rounded-lg'>
                             <img
-                                className='w-full rounded-l-lg'
+                                className='w-full rounded-lg'
                                 src={signupImg}
                                 alt=''
                             />
