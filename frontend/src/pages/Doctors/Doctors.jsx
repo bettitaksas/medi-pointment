@@ -1,10 +1,19 @@
+import { useState } from 'react';
+import DoctorCard from '../../components/Doctors/DoctorCard';
 import Testimonial from '../../components/Testimonial/Testimonial';
-import DoctorCard from "../../components/Doctors/DoctorCard";
+
+import { doctors } from "../../assets/data/doctors";
 
 const Doctors = () => {
+    const [query, setQuery] = useState('');
+
+    const handleSearch = () => {
+        setQuery(query.trim());
+    };
+
     return (
         <>
-            <section className='bg-[#0AA18F42]'>
+            <section className='bg-[#fff9ea]'>
                 <div className='container text-center'>
                     <h2 className='heading'>Find a Doctor</h2>
                     <div className='max-w-[570px] mx-auto mt-[30px] bg-[#0066ff2c] rounded-md flex items-center justify-between '>
@@ -12,8 +21,13 @@ const Doctors = () => {
                             className='py-4 pl-4 pr-2 focus:outline-none cursor-pointer w-full bg-transparent placeholder:text-textColor'
                             type='search'
                             placeholder='Search by doctor name or specialization'
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
                         />
-                        <button className='btn mt-0 rounded-[0px] rounded-r-md'>
+                        <button
+                            className='btn mt-0 rounded-[0px] rounded-r-md'
+                            onClick={handleSearch}
+                        >
                             Search
                         </button>
                     </div>
@@ -23,7 +37,9 @@ const Doctors = () => {
             <section>
                 <div className='container'>
                     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5'>
-                    <DoctorCard />
+                        {doctors?.map((doctor) => (
+                            <DoctorCard doctor={doctor} key={doctor.id} />
+                        ))}
                     </div>
                 </div>
             </section>
