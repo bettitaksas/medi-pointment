@@ -1,34 +1,28 @@
-/* eslint-disable react/prop-types */
-const DoctorAbout = () => {
-    return (
-        <div>
-            <div>
-                <h3 className='text-[20px] leading-[30px] text-headingColor font-semibold flex gap-2 items-center'>
-                    About of
-                    <span className='text-irisBlueColor font-bold text-[24px] leading-9'>
-                        {name}
-                    </span>
-                </h3>
-                <p className='text__para'>about</p>
-            </div>
+const SidePanel = () => {
 
-            <div className='mt-12'>
-                <h3 className='text-[20px] leading-[30px] text-headingColor font-semibold flex gap-2 items-center'>
-                    Education
-                </h3>
-                <ul className='pt-4 md:p-5'>qualifications</ul>
-            </div>
+  return (
+    <div className=" shadow-panelShadow p-3 lg:p-5 rounded-md">
+      <div className="flex items-center justify-between">
+        <p className="text__para mt-0 font-semibold">Ticket Price</p>
+        <span className="text-[16px] leading-7 lg:text-[22px] lg:leading-8 text-headingColor font-bold">
+          ticketPrice BDT
+        </span>
+      </div>
 
-            <div className='mt-12'>
-                <h3 className='text-[20px] leading-[30px] text-headingColor font-semibold flex gap-2 items-center'>
-                    Experience
-                </h3>
-                <ul className='pt-4 md:p-5 grid sm:grid-cols-2  gap-[30px]'>
-                    experiences
-                </ul>
-            </div>
-        </div>
-    );
+      <div className="mt-[30px]">
+        <p className="text__para mt-0 font-semibold text-headingColor">
+          Available Time Slots:
+        </p>
+        <ul className="mt-3">
+          timeSlots
+        </ul>
+      </div>
+
+      <button className="px-2 btn w-full rounded-md">
+        Book Appointment
+      </button>
+    </div>
+  );
 };
 
-export default DoctorAbout;
+export default SidePanel;
