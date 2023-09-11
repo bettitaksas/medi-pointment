@@ -10,7 +10,6 @@ Welcome to the Medical Appointment Booking Website repository! This web applicat
 - [Usage](#usage)
 - [Technologies](#technologies)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
@@ -57,3 +56,23 @@ Follow these steps to set up the project locally:
 
    ```bash
    npm run dev
+
+## Technologies
+
+- **Frontend:** 
+    - React.js
+    - React Router for routing
+    - Stripe Elements for payment processing
+- **Backend:** 
+    - Node.js with Express.js
+    - MongoDB for database storage
+    - JSON Web Tokens (JWT) for authentication
+    - Stripe API for payment handling
+
+## Contributing
+Contributions are welcome! If you'd like to contribute to this project, please follow these guidelines:
+
+- Fork the repository.
+- Create a new branch for your feature or bug fix.
+- Make your changes and ensure the code is properly tested.
+- Submit a pull request with a detailed description of your changes.
