@@ -20,5 +20,36 @@ export const getOneDoctor = async (req, res) => {
             message: 'Not found',
         });
     }
+};
 
+export const getAllDoctor = async (req, res) => {
+    try {
+        const { query } = req.query;
+        let doctors;
+
+        if (query) {
+            doctors = await Doctor.find({
+                isApproved: 'approved',
+                $or: [
+                    { name: { $regex: query, $options: 'i' } },
+                    { specialization: { $regex: query, $options: 'i' } },
+                ],
+            }).select('-password');
+        } else {
+            doctors = await doctors
+                .find({ isApproved: 'approved' })
+                .select('-password');
+        }
+
+        res.status(200).join({
+            success: true,
+            message: 'Successful',
+            data: doctors,
+        });
+    } catch (err) {
+        res.status(404).json({
+            success: false,
+            message: 'Not found',
+        });
+    }
 };
