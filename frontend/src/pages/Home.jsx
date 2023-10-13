@@ -28,8 +28,7 @@ const Home = () => {
                         <div>
                             <div className=' lg:w-[570px]'>
                                 <h1 className='text-headingColor text-[36px] leading-[46px] md:text-[60px] md:leading-[70px] font-[800] '>
-                                    We help patients live a healthy, longer
-                                    life.
+                                    We support patients in achieving a longer and healthier life.
                                 </h1>
                                 <p className='text__para'>
                                     Lorem ipsum dolor sit amet consectetur,
