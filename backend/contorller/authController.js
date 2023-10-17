@@ -1,15 +1,7 @@
 import jwt from 'jsonwebtoken';
-import User from "../models/UserSchema.js";
-import bcrypt from "bcryptjs";
-import Doctor from "../models/DoctorSchema.js";
-
-const generateToken = (user) => {
-    return jwt.sign(
-        { id: user._id, role: user.role },
-        process.env.JWT_SECRET_KEY,
-        { expiresIn: '15d' }
-    );
-};
+import User from '../models/UserSchema.js';
+import bcrypt from 'bcryptjs';
+import Doctor from '../models/DoctorSchema.js';
 
 export const registerUser = async (req, res) => {
     const { name, email, password, role, photo, gender } = req.body;
@@ -54,12 +46,67 @@ export const registerUser = async (req, res) => {
         await user.save();
         res.status(200).json({
             success: true,
-            message: 'user successfully created',
+            message: 'User created successfully',
         });
     } catch (err) {
         res.status(500).json({
             success: false,
-            message: 'Internal server error! Try again',
+            message: 'Internal server error',
         });
     }
+};
+
+export const login = async (req, res) => {
+    const { email } = req.body;
+
+    try {
+        let user = null;
+
+        const patient = await User.findOne({ email });
+        const doctor = await Doctor.findOne({ email });
+
+        if (patient) {
+            user = patient;
+        } else if (doctor) {
+            user = doctor;
+        }
+
+        if (!user) {
+            return res
+                .status(400)
+                .json({ success: false, message: 'Invalid credentials' });
+        }
+
+        const isPasswordMatch = await bcrypt.compare(
+            req.body.password,
+            user.password
+        );
+        if (!isPasswordMatch) {
+            return res
+                .status(400)
+                .json({ success: false, message: 'Invalid credentials' });
+        }
+
+        const { password, role, appointments, ...rest } = user._doc;
+
+        const token = generateToken(user);
+
+        res.status(200).json({
+            success: true,
+            message: 'Successfully login',
+            token,
+            data: { ...rest },
+            role,
+        });
+    } catch (error) {
+        res.status(500).json({ success: false, message: 'Failed to login' });
+    }
+};
+
+const generateToken = (user) => {
+    return jwt.sign(
+        { id: user._id, role: user.role },
+        process.env.JWT_SECRET_KEY,
+        { expiresIn: '15d' }
+    );
 };
