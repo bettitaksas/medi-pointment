@@ -3,31 +3,30 @@ import {
     patientAuth,
     authenticate,
     restrict,
-  } from "../auth/verifyToken.js";
-  import {
+} from '../auth/verifyToken.js';
+import {
     deleteUser,
     getAllUser,
     getUserProfile,
     getSingleUser,
     updateUser,
     getMyAppointments,
-  } from "../controllers/userController.js";
-  import express from "express";
-  
-  const router = express.Router();
+} from '../controllers/userController.js';
+import express from 'express';
 
-  router.get("/", authenticate, adminAuth, getAllUser);
-  router.get("/:id", authenticate, patientAuth, getSingleUser);
-  router.put("/:id", authenticate, patientAuth, updateUser);
-  router.delete("/:id", authenticate, patientAuth, deleteUser);
-  
-  router.get("/profile/me", authenticate, restrict(["patient"]), getUserProfile);
-  router.get(
-    "/appointments/my-appointments",
+const router = express.Router();
+
+router.get('/', authenticate, adminAuth, getAllUser);
+router.get('/:id', authenticate, patientAuth, getSingleUser);
+router.put('/:id', authenticate, patientAuth, updateUser);
+router.delete('/:id', authenticate, patientAuth, deleteUser);
+
+router.get('/profile/me', authenticate, restrict(['patient']), getUserProfile);
+router.get(
+    '/appointments/my-appointments',
     authenticate,
-    restrict(["patient"]),
+    restrict(['patient']),
     getMyAppointments
-  );
-  
-  export default router;
-  
+);
+
+export default router;
