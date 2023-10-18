@@ -1,15 +1,30 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import DoctorCard from '../../components/Doctors/DoctorCard';
 import Testimonial from '../../components/Testimonial/Testimonial';
-
-import { doctors } from "../../assets/data/doctors";
+import { BASE_URL } from '../../config/config';
+import useFetchData from '../../hooks/useFetchData';
+import HashLoader from 'react-spinners/HashLoader';
 
 const Doctors = () => {
     const [query, setQuery] = useState('');
+    const [debouncedQuery, setDebouncedQuery] = useState('');
+    const {
+        data: doctors,
+        loading,
+        error,
+    } = useFetchData(`${BASE_URL}/doctors`);
 
     const handleSearch = () => {
         setQuery(query.trim());
     };
+
+    useEffect(() => {
+        const timeoutId = setTimeout(() => {
+            setDebouncedQuery(query);
+        }, 500);
+
+        return () => clearTimeout(timeoutId);
+    }, [query]);
 
     return (
         <>
@@ -36,11 +51,27 @@ const Doctors = () => {
 
             <section>
                 <div className='container'>
-                    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5'>
-                        {doctors?.map((doctor) => (
-                            <DoctorCard doctor={doctor} key={doctor.id} />
-                        ))}
-                    </div>
+                    {loading && (
+                        <div className='flex items-center justify-center w-full h-full'>
+                            <HashLoader color='#0067FF' />
+                        </div>
+                    )}
+
+                    {error && (
+                        <div className='flex items-center justify-center w-full h-full'>
+                            <h3 className='text-headingColor text-[20px] font-semibold leading-[30px]'>
+                                {error}
+                            </h3>
+                        </div>
+                    )}
+
+                    {!loading && !error && (
+                        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5'>
+                            {doctors?.map((doctor) => (
+                                <DoctorCard doctor={doctor} key={doctor.id} />
+                            ))}
+                        </div>
+                    )}
                 </div>
             </section>
 
