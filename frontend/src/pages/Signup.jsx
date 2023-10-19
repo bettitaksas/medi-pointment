@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import signupImg from '../assets/images/signup.gif';
 import uploadImageToCloudinary from '../utils/uploadCloudinary';
 import HashLoader from 'react-spinners/HashLoader';
+import { BASE_URL } from '../config/config';
+import { toast } from 'react-toastify';
 
 const Signup = () => {
     const [selectedFile, setSelectedFile] = useState(null);
@@ -16,6 +18,8 @@ const Signup = () => {
         photo: selectedFile,
     });
     const [loading, setLoading] = useState(false);
+
+    const navigate = useNavigate();
 
     const handleInputChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -34,6 +38,29 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
+
+        try {
+            const res = await fetch(`${BASE_URL}/auth/register`, {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const { message } = await res.json();
+
+            if (res.status === 400) {
+                throw new Error(message);
+            }
+
+            setLoading(false);
+            toast.success(message);
+            navigate('/login');
+        } catch (error) {
+            toast.error(error.message);
+            setLoading(false);
+        }
     };
 
     return (

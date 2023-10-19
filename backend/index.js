@@ -4,6 +4,12 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 
+import authRoute from './routes/auth.js';
+import userRoute from './routes/user.js';
+import doctorRoute from './routes/doctor.js';
+import reviewRoute from './routes/review.js';
+import bookingRoute from './routes/booking.js';
+
 dotenv.config();
 
 const app = express();

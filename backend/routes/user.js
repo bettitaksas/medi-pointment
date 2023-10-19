@@ -3,12 +3,12 @@ import {
     patientAuth,
     authenticate,
     restrict,
-} from '../auth/verifyToken.js';
+} from '../auth/tokenVertify.js';
 import {
     deleteUser,
     getAllUser,
     getUserProfile,
-    getSingleUser,
+    getOneUser,
     updateUser,
     getMyAppointments,
 } from '../controllers/userController.js';
@@ -17,7 +17,7 @@ import express from 'express';
 const router = express.Router();
 
 router.get('/', authenticate, adminAuth, getAllUser);
-router.get('/:id', authenticate, patientAuth, getSingleUser);
+router.get('/:id', authenticate, patientAuth, getOneUser);
 router.put('/:id', authenticate, patientAuth, updateUser);
 router.delete('/:id', authenticate, patientAuth, deleteUser);
 

@@ -1,4 +1,4 @@
-import { authenticate, patientAuth } from '../auth/verifyToken.js';
+import { authenticate, patientAuth } from '../auth/tokenVertify.js';
 import { createReview, getAllReview } from '../controllers/reviewController.js';
 import express from 'express';
 

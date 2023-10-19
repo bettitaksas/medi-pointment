@@ -14,17 +14,17 @@ const Testimonial = () => {
         {
             name: 'Robert Taylor',
             stars: 5,
-            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula aliquam justo, a dignissim arcu consectetur vel. Quisque suscipit mauris vel erat gravida, eget condimentum augue euismod.',
+            content: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
         },
         {
             name: 'Elizabeth Harris',
             stars: 5,
-            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula aliquam justo, a dignissim arcu consectetur vel. Quisque suscipit mauris vel erat gravida, eget condimentum augue euismod.',
+            content: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         },
         {
             name: 'Muhibur Rahman',
             stars: 5,
-            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula aliquam justo, a dignissim arcu consectetur vel. Quisque suscipit mauris vel erat gravida, eget condimentum augue euismod.',
+            content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         },
     ];
 
