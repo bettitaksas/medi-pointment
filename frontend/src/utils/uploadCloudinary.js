@@ -1,20 +1,19 @@
-const uploadImageToCloudinary = async file => {
+const uploadImageToCloudinary = async (file) => {
     const uploadData = new FormData();
-    uploadData.append("file", file);
-    uploadData.append("upload_preset", "doctor-app");
-    uploadData.append("cloud_name", "MY_CLOUDINARY_CLOUD_NAME");
-  
+    uploadData.append('file', file);
+    uploadData.append('upload_preset', 'doctor-app');
+    uploadData.append('cloud_name', 'dmfyhijn4');
+
     const res = await fetch(
-      "https://api.cloudinary.com/v1_1/MY_CLOUDINARY_CLOUD_NAME/image/upload",
-      {
-        method: "post",
-        body: uploadData,
-      }
+        'https://api.cloudinary.com/v1_1/dmfyhijn4/image/upload',
+        {
+            method: 'post',
+            body: uploadData,
+        }
     );
-  
+
     const data = await res.json();
     return data;
-  };
-  
-  export default uploadImageToCloudinary;
-  
+};
+
+export default uploadImageToCloudinary;
