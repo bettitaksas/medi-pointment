@@ -1,9 +1,9 @@
 import { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import HashLoader from 'react-spinners/HashLoader';
-import { BASE_URL } from "../config";
-import { AuthContext } from "../context/authContext";
-import { toast } from "react-toastify";
+import { BASE_URL } from '../config/config';
+import { AuthContext } from '../context/authContext';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const [formData, setFormData] = useState({
