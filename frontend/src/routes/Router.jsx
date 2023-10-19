@@ -8,7 +8,7 @@ import DoctorDetails from '../pages/Doctors/DoctorDetails';
 
 import { Routes, Route } from 'react-router-dom';
 
-const Routers = () => {
+const Router = () => {
     return (
         <Routes>
             <Route path='/' element={<Home />} />
@@ -23,4 +23,4 @@ const Routers = () => {
     );
 };
 
-export default Routers;
+export default Router;
