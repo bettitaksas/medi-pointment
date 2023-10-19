@@ -1,13 +1,13 @@
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
-import Routers from '../routes/Routers';
+import Router from '../routes/Router';
 
 function Layout() {
     return (
         <>
             <Header />
             <main>
-                <Routers />
+                <Router />
             </main>
             <Footer />
         </>
