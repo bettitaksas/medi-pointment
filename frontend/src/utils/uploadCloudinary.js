@@ -1,7 +1,7 @@
 const uploadImageToCloudinary = async (file) => {
     const uploadData = new FormData();
     uploadData.append('file', file);
-    uploadData.append('upload_preset', 'doctor-app');
+    uploadData.append('upload_preset', 'test-app-medipointment');
     uploadData.append('cloud_name', 'dmfyhijn4');
 
     const res = await fetch(
