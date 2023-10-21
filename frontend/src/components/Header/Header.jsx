@@ -56,7 +56,7 @@ const Header = () => {
                 <div className='flex items-center justify-between'>
                     {/* ======logo====== */}
                     <div>
-                        <img src={logo} alt='logo' className='w-24' />
+                        <img src={logo} alt='logo' className='w-24 rounded-full' />
                     </div>
 
                     {/* ========== nav menu =========== */}
@@ -72,9 +72,9 @@ const Header = () => {
                                         to={link.path}
                                         className={(navClass) =>
                                             navClass.isActive
-                                                ? 'text-[#0067FF] font-[600] text-[16px] leading-7'
-                                                : 'text-textColor font-[500] text-[16px] leading-7'
-                                        }
+                                                ? 'text-white font-[600] text-[16px] leading-7'
+                                                : 'text-textColor font-[500] text-[16px] leading-7 hover:text-white'
+                                        } 
                                     >
                                         {link.display}
                                     </NavLink>
@@ -94,10 +94,10 @@ const Header = () => {
                                   : "/users/profile/me"
                               } `}
                             >
-                                <figure className='w-[35px] h-[35px] rounded-full cursor-pointer'>
+                                <figure className='w-[50px] h-[50px] rounded-full overflow-hidden cursor-pointer'>
                                     <img
                                         src={user?.photo}
-                                        className='w-full rounded-full'
+                                        className='w-full h-full rounded-full object-cover'
                                         alt=''
                                     />
                                 </figure>

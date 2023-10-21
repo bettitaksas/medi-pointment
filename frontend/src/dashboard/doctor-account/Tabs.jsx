@@ -31,7 +31,7 @@ const Tabs = ({ tab, setTab }) => {
                     onClick={() => setTab('overview')}
                     className={` ${
                         tab === 'overview'
-                            ? 'bg-indigo-100 text-[#0067FF]'
+                            ? 'bg-purpleColor text-primaryColor'
                             : 'bg-transparent text-headingColor'
                     } w-full   btn rounded-md  mt-0`}
                 >
@@ -41,7 +41,7 @@ const Tabs = ({ tab, setTab }) => {
                     onClick={() => setTab('appointments')}
                     className={` ${
                         tab === 'appointments'
-                            ? 'bg-indigo-100 text-[#0067FF]'
+                            ? 'bg-purpleColor text-primaryColor'
                             : 'bg-transparent text-headingColor'
                     } w-full   btn rounded-md  mt-0`}
                 >
@@ -52,7 +52,7 @@ const Tabs = ({ tab, setTab }) => {
                     onClick={() => setTab('settings')}
                     className={` ${
                         tab === 'settings'
-                            ? 'bg-indigo-100 text-[#0067FF]'
+                            ? 'bg-purpleColor text-primaryColor'
                             : 'bg-transparent text-headingColor'
                     } w-full   btn rounded-md  mt-0`}
                 >
@@ -62,7 +62,7 @@ const Tabs = ({ tab, setTab }) => {
                 <div className='mt-[100px] w-full'>
                     <button
                         onClick={handleLogout}
-                        className='w-full bg-[#181A1E] p-3 rounded-md text-white text-[16px] leading-7'
+                        className='w-full bg-primaryColor p-3 rounded-md text-white text-[16px] leading-7'
                     >
                         Logout
                     </button>

@@ -4,9 +4,10 @@ export default {
     theme: {
         extend: {
             colors: {
-                primaryColor: '#359489FF',
-                yellowColor: '#FFC3A0',
-                purpleColor: '#D0A3FF',
+                primaryColor: '#16255CFF',
+                pinkColor: '#DE9BC9FF',
+                yellowColor: '#8092ADFF',
+                purpleColor: '#E6D3E0FF',
                 irisBlueColor: '#A3D7FF',
                 headingColor: '#181A1E',
                 textColor: '#4E545F',

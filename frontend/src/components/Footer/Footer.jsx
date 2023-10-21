@@ -75,7 +75,9 @@ const Footer = () => {
             <div className='container'>
                 <div className='flex justify-between flex-col md:flex-row flex-wrap gap-[30px]'>
                     <div>
-                        <img src={logo} alt='' className='w-[100px]' />
+                    <div className="flex items-center justify-center">
+                        <img src={logo} alt='logo' className='w-[100px] rounded-full' />
+                        </div>
                         <p className='text-[16px] leading-7 font-[400] text-textColor mt-4'>
                             Copyright © {year}
                         </p>
@@ -85,7 +87,7 @@ const Footer = () => {
                                 <Link
                                     key={index}
                                     to={link.path}
-                                    className=' w-[36px] h-[36px] rounded-full border border-solid border-[#181A1E] flex  items-center justify-center  group hover:bg-[#0067FF] hover:border-none'
+                                    className=' w-[36px] h-[36px] rounded-full border border-solid border-[#181A1E] flex  items-center justify-center  group hover:bg-primaryColor hover:border-none'
                                 >
                                     {link.icon}
                                 </Link>

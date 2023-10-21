@@ -60,7 +60,7 @@ const FeedbackForm = () => {
                                 key={index}
                                 className={`${
                                     index <= ((rating && hover) || hover)
-                                        ? 'text-yellowColor'
+                                        ? 'text-pinkColor'
                                         : 'text-gray-400'
                                 } bg-transparent border-none outline-none cursor-pointer text-[22px]`}
                                 onClick={() => setRating(index)}
