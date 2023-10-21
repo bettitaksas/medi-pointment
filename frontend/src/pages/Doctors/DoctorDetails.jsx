@@ -58,7 +58,7 @@ const DoctorDetails = () => {
                                     <img
                                         src={photo}
                                         alt=''
-                                        className='w-full'
+                                        className='w-full rounded-md'
                                     />
                                 </figure>
                                 <div>

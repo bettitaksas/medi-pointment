@@ -70,7 +70,7 @@ const Dashboard = () => {
                                                 <img
                                                     src={doctorData.photo}
                                                     alt=''
-                                                    className='w-full'
+                                                    className='w-full rounded-md'
                                                 />
                                             </figure>
                                             <div>
