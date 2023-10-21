@@ -6,8 +6,8 @@ export const getOneDoctor = async (req, res) => {
 
     try {
         const doctor = await Doctor.findById(id)
-            .populate('review')
-            .select('-password');
+            /*.populate('review')
+            .select('-password');*/
 
         res.status(200).json({
             success: true,
