@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react';
-import { BASE_URL, token } from '../../config';
+import { BASE_URL, token } from '../../config/config';
 import uploadImageToCloudinary from '../../utils/uploadCloudinary';
 import { toast } from 'react-toastify';
 

@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <BrowserRouter>
             <AuthContextProvider>
                 <ToastContainer
-                    theme='white'
+                    theme='dark'
                     position='top-right'
                     autoClose={3000}
                     closeOnClick
