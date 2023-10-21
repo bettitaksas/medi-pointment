@@ -136,7 +136,7 @@ const Home = () => {
 
                             <Link
                                 to='/doctors'
-                                className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-buttonBgColor hover:border-none'
+                                className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:text-white'
                             >
                                 <BsArrowRight className='group-hover:text-white w-6 h-5' />
                             </Link>
@@ -163,7 +163,7 @@ const Home = () => {
 
                             <Link
                                 to='/doctors'
-                                className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-buttonBgColor hover:border-none'
+                                className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:text-white'
                             >
                                 <BsArrowRight className='group-hover:text-white w-6 h-5' />
                             </Link>
@@ -189,7 +189,7 @@ const Home = () => {
 
                             <Link
                                 to='/doctors'
-                                className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-buttonBgColor hover:border-none'
+                                className='w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:text-white'
                             >
                                 <BsArrowRight className='group-hover:text-white w-6 h-5' />
                             </Link>
@@ -250,7 +250,7 @@ const Home = () => {
                         <div className='relative z-10  xl:w-[770px] flex justify-end mt-[50px] lg:mt-0'>
                             <img
                                 src={featureImg}
-                                className='w-3/4'
+                                className='w-3/4 rounded-md'
                                 alt='about_img'
                             />
 

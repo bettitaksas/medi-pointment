@@ -45,11 +45,11 @@ const MyAccount = () => {
                     <div className='grid md:grid-cols-3 gap-10 '>
                         <div className=' px-[30px] pb-[50px] rounded-md  '>
                             <div className='flex items-center justify-center'>
-                                <figure className='w-[100px] h-[100px] rounded-full border-2 border-solid border-[#0067FF]'>
+                                <figure className='w-[100px] h-[100px] rounded-full border-2 border-solid border-primaryColor overflow-hidden'>
                                     <img
                                         src={userData?.photo}
                                         alt=''
-                                        className='w-full rounded-full'
+                                        className='w-full h-full rounded-full object-cover'
                                     />
                                 </figure>
                             </div>
@@ -73,7 +73,7 @@ const MyAccount = () => {
                             <div className='mt-[50px] md:mt-[100px]'>
                                 <button
                                     onClick={handleLogout}
-                                    className='w-full bg-[#181A1E] p-3 rounded-md text-white text-[16px] leading-7'
+                                    className='w-full bg-primaryColor p-3 rounded-md text-white text-[16px] leading-7'
                                 >
                                     Logout
                                 </button>
@@ -89,8 +89,8 @@ const MyAccount = () => {
                                     onClick={() => setTab('bookings')}
                                     className={`${
                                         tab === 'bookings' &&
-                                        'bg-[#0067FF] text-white font-normal'
-                                    }  p-2 mr-5 px-5 rounded-md text-headingColor font-semibold text-[16px] leading-7  border border-solid border-[#0067FF]`}
+                                        'bg-purpleColor text-white font-normal'
+                                    }  p-2 mr-5 px-5 rounded-md text-headingColor font-semibold text-[16px] leading-7`}
                                 >
                                     My Bookings
                                 </button>
@@ -98,8 +98,8 @@ const MyAccount = () => {
                                     onClick={() => setTab('settings')}
                                     className={`${
                                         tab === 'settings' &&
-                                        'bg-[#0067FF] text-white font-normal'
-                                    } py-2 px-5 rounded-md font-semibold text-headingColor text-[16px] leading-7  border border-solid border-[#0067FF]`}
+                                        'bg-purpleColor text-white font-normal'
+                                    } py-2 px-5 rounded-md font-semibold text-headingColor text-[16px] leading-7`}
                                 >
                                     Settings
                                 </button>
