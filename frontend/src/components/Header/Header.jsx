@@ -52,7 +52,7 @@ const Header = () => {
 
     return (
         <header ref={headerRef} className='header flex items-center'>
-            <div className='container'>
+            <div className='container shadow-lg rounded-md'>
                 <div className='flex items-center justify-between'>
                     {/* ======logo====== */}
                     <Link to='/'>
@@ -72,8 +72,8 @@ const Header = () => {
                                         to={link.path}
                                         className={(navClass) =>
                                             navClass.isActive
-                                                ? 'text-white font-[600] text-[16px] leading-7'
-                                                : 'text-textColor font-[500] text-[16px] leading-7 hover:text-white'
+                                                ? 'text-purpleColor font-[600] text-[16px] leading-7'
+                                                : 'text-textColor font-[500] text-[16px] leading-7 hover:text-purpleColor'
                                         } 
                                     >
                                         {link.display}

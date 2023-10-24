@@ -26,8 +26,9 @@
     }
 
     .header {
-        @apply bg-[url('./assets/images/mask.png')] bg-no-repeat bg-center bg-cover w-full h-[100px] leading-[100px];
-    }
+/*         @apply bg-[url('./assets/images/mask.png')] bg-no-repeat bg-center bg-cover w-full h-[100px] leading-[100px];
+ */  
+}
 
     .form__label {
         @apply text-textColor text-[16px] leading-7 font-semibold mb-2;
