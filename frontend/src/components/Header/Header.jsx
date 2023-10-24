@@ -55,9 +55,9 @@ const Header = () => {
             <div className='container'>
                 <div className='flex items-center justify-between'>
                     {/* ======logo====== */}
-                    <div>
+                    <Link to='/'>
                         <img src={logo} alt='logo' className='w-24 rounded-full' />
-                    </div>
+                    </Link>
 
                     {/* ========== nav menu =========== */}
                     <div
