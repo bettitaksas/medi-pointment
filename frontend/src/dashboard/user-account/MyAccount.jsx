@@ -120,7 +120,8 @@ const MyAccount = () => {
                                         <h2 className='heading text-[30px]'>
                                             My bookings
                                         </h2>
-                                        <MyBookings />
+                                        {userData.bookings?.map((booking, i) => <div key={i}>booking id: {booking}</div>)}
+                                        {/* <MyBookings userData={userData}/> */}
                                     </div>
                                 )}
                                 {tab === 'settings' && (

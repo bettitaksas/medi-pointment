@@ -4,16 +4,17 @@ import { BASE_URL, token } from './../../config/config';
 
 const SidePanel = ({ ticketPrice, timeSlots, doctorId }) => {
     const bookingHandler = async (item) => {
-        console.log(item)
+        console.log('item: ', item)
         try {
             const response = await fetch(
                 `${BASE_URL}/bookings/checkout-session/${doctorId}`,
                 {
                     method: 'post',
                     headers: {
+                        'Content-Type': 'application/json',
                         Authorization: `Bearer ${token} `,
                     },
-                    body: JSON.stringify(item),
+                    body: JSON.stringify({ item }),
                 }
             );
 
@@ -21,13 +22,13 @@ const SidePanel = ({ ticketPrice, timeSlots, doctorId }) => {
 
             console.log(data, item)
 
-            if (data.session && data.session.url) {
+/*             if (data.session && data.session.url) {
                 window.location.href = data.session.url;
             } else {
                 console.error(
                     'Invalid response data: session or session.url is undefined.'
                 );
-            }
+            } */
         } catch (error) {
             console.error('An error occurred during the fetch request:', error);
         }
