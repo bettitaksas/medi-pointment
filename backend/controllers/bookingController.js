@@ -4,7 +4,6 @@ import Stripe from 'stripe';
 import User from '../models/UserSchema.js';
 
 export const getCheckoutSession = async (req, res) => {
-
     try {
         const doctor = await Doctor.findById(req.params.doctorId);
         const user = await User.findById(req.userId);
@@ -25,15 +24,16 @@ export const getCheckoutSession = async (req, res) => {
             req.params.doctorId,
             { $push: { bookings: booking } },
             { new: true }
-            );
+        );
+
+        const updatedUser = await User.findByIdAndUpdate(
+            req.userId,
+            { $push: { bookings: booking } },
+            { new: true }
+        );
 
         res.status(200).json({ success: true, message: 'Success' });
-    } catch (err) {
-
-    }
-    
-
-
+    } catch (err) {}
 
     /*
      try {
