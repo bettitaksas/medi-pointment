@@ -4,6 +4,7 @@ import { BASE_URL, token } from './../../config/config';
 
 const SidePanel = ({ ticketPrice, timeSlots, doctorId }) => {
     const bookingHandler = async (item) => {
+        console.log(item)
         try {
             const response = await fetch(
                 `${BASE_URL}/bookings/checkout-session/${doctorId}`,
@@ -12,6 +13,7 @@ const SidePanel = ({ ticketPrice, timeSlots, doctorId }) => {
                     headers: {
                         Authorization: `Bearer ${token} `,
                     },
+                    body: JSON.stringify(item),
                 }
             );
 

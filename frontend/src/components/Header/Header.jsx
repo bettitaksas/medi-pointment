@@ -1,8 +1,9 @@
 import { useEffect, useRef, useContext } from 'react';
 import logo from '../../assets/images/logo.png';
+import avatar from '../../assets/images/avatar-icon.png';
 import { NavLink, Link } from 'react-router-dom';
 import { BiMenu } from 'react-icons/bi';
-import { AuthContext } from "./../../context/authContext";
+import { AuthContext } from './../../context/authContext';
 
 const navLinks = [
     {
@@ -56,7 +57,11 @@ const Header = () => {
                 <div className='flex items-center justify-between'>
                     {/* ======logo====== */}
                     <Link to='/'>
-                        <img src={logo} alt='logo' className='w-24 rounded-full' />
+                        <img
+                            src={logo}
+                            alt='logo'
+                            className='w-24 rounded-full'
+                        />
                     </Link>
 
                     {/* ========== nav menu =========== */}
@@ -74,7 +79,7 @@ const Header = () => {
                                             navClass.isActive
                                                 ? 'text-purpleColor font-[600] text-[16px] leading-7'
                                                 : 'text-textColor font-[500] text-[16px] leading-7 hover:text-purpleColor'
-                                        } 
+                                        }
                                     >
                                         {link.display}
                                     </NavLink>
@@ -85,33 +90,47 @@ const Header = () => {
 
                     {/* ======nav right====== */}
                     <div className='flex items-center gap-4'>
-                    {token && user ? (
-                        <div>
-                            <Link 
-                            to={`${
-                                role === "doctor"
-                                  ? "/doctors/profile/me"
-                                  : "/users/profile/me"
-                              } `}
-                            >
-                                <figure className='w-[50px] h-[50px] rounded-full overflow-hidden cursor-pointer'>
-                                    <img
-                                        src={user?.photo}
-                                        className='w-full h-full rounded-full object-cover'
-                                        alt=''
-                                    />
-                                </figure>
-                            </Link>
-                        </div>
+                        {token && user ? (
+                            <div>
+                                <Link
+                                    to={`${
+                                        role === 'doctor'
+                                            ? '/doctors/profile/me'
+                                            : '/users/profile/me'
+                                    } `}
+                                >
+                                    <figure className='w-[50px] h-[50px] rounded-full overflow-hidden cursor-pointer border-2 border-primaryColor'>
+                                        {user.photo ? (
+                                            <img
+                                                src={user.photo}
+                                                className='w-full h-full rounded-full object-cover'
+                                                alt='avatar-photo'
+                                            />
+                                        ) : (
+                                            <img
+                                                src={avatar}
+                                                className='w-full h-full rounded-full object-cover'
+                                                alt='avatar-photo'
+                                            />
+                                        )}
+
+                                        <img
+                                            src={user?.photo}
+                                            className='w-full h-full rounded-full object-cover'
+                                            alt=''
+                                        />
+                                    </figure>
+                                </Link>
+                            </div>
                         ) : (
-                        <Link to='/login'>
-                            <button
-                                className='bg-primaryColor py-2 px-6 text-white
+                            <Link to='/login'>
+                                <button
+                                    className='bg-primaryColor py-2 px-6 text-white
                             font-[600] h-[44px] flex items-center justify-center rounded-[50px]'
-                            >
-                                Login
-                            </button>
-                        </Link>
+                                >
+                                    Login
+                                </button>
+                            </Link>
                         )}
                         <span className='md:hidden' onClick={toggleMenu}>
                             <BiMenu className='w-6 h-6 cursor-pointer' />

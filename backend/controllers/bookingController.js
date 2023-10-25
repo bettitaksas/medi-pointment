@@ -4,7 +4,39 @@ import Stripe from 'stripe';
 import User from '../models/UserSchema.js';
 
 export const getCheckoutSession = async (req, res) => {
+
     try {
+        const doctor = await Doctor.findById(req.params.doctorId);
+        const user = await User.findById(req.userId);
+
+        console.log(req.params.doctorId);
+        console.log(user.name);
+        console.log(req.body);
+
+        const booking = new Booking({
+            doctor: doctor._id,
+            user: user._id,
+            ticketPrice: doctor.ticketPrice,
+        });
+
+        await booking.save();
+
+        const updatedDoctor = await Doctor.findByIdAndUpdate(
+            req.params.doctorId,
+            { $push: { bookings: booking } },
+            { new: true }
+            );
+
+        res.status(200).json({ success: true, message: 'Success' });
+    } catch (err) {
+
+    }
+    
+
+
+
+    /*
+     try {
         const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
         const doctor = await Doctor.findById(req.params.doctorId);
@@ -22,7 +54,7 @@ export const getCheckoutSession = async (req, res) => {
             line_items: [
                 {
                     price_data: {
-                        currency: 'bdt',
+                        currency: 'euro',
                         unit_amount: doctor.ticketPrice * 100,
                         product_data: {
                             name: doctor.name,
@@ -51,5 +83,23 @@ export const getCheckoutSession = async (req, res) => {
             success: false,
             message: 'Error creating checkout session',
         });
-    }
+    } */
+
+    /*     try {
+
+        const doctor = await Doctor.findById(req.params.doctorId);
+        const user = await User.findById(req.userId);
+
+        console.log(doctor, user)
+        console.log(req)
+
+        //add appointment to doctors object
+        //add appointment to users object
+        //delete bookable appointment from doctors profile
+
+        
+        
+    } catch (err) {
+        console.log("something went wrong")
+    } */
 };
