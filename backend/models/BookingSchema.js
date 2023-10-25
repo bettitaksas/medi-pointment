@@ -13,6 +13,9 @@ const bookingSchema = new mongoose.Schema(
             required: true,
         },
         ticketPrice: { type: String, required: true },
+        day: { type: String },
+        startingTime: { type: String },
+        endingTime: { type: String },
 
         isPaid: {
             type: Boolean,
