@@ -10,12 +10,15 @@ export const getCheckoutSession = async (req, res) => {
 
         console.log(req.params.doctorId);
         console.log(user.name);
-        console.log(req.body);
+        console.log(req.body.item.day);
 
         const booking = new Booking({
             doctor: doctor._id,
             user: user._id,
             ticketPrice: doctor.ticketPrice,
+            day: req.body.item.day,
+            startingTime: req.body.item.startingTime,
+            endingTime: req.body.item.endingTime
         });
 
         await booking.save();
@@ -102,4 +105,43 @@ export const getCheckoutSession = async (req, res) => {
     } catch (err) {
         console.log("something went wrong")
     } */
+};
+
+export const getOneBooking = async (req, res) => {
+    const id = req.params.id;
+
+    try {
+        const booking = await Booking.findById(id)
+            /*.populate('review')*/
+            //.select('-password');
+
+        res.status(200).json({
+            success: true,
+            message: 'Succesful',
+            data: booking,
+        });
+    } catch (err) {
+        res.status(404).json({
+            success: false,
+            message: 'Not found',
+        });
+    }
+};
+
+export const getAllBookings = async (req, res) => {
+    try {
+        const { query } = req.query;
+        let bookings = await Booking.find({});
+
+        res.status(200).json({
+            success: true,
+            message: 'Successful',
+            data: bookings,
+        });
+    } catch (err) {
+        res.status(404).json({
+            success: false,
+            message: 'Not found',
+        });
+    }
 };
