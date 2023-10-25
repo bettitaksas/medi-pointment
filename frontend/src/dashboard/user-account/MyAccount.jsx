@@ -3,6 +3,7 @@ import { BASE_URL } from './../../config/config';
 import { useNavigate } from 'react-router-dom';
 import Profile from './Profile';
 import MyBookings from './MyBookings';
+import Booking from './Booking';
 import useGetProfile from '../../hooks/useFetchData';
 import HashLoader from 'react-spinners/HashLoader';
 import { AuthContext } from '../../context/authContext';
@@ -16,6 +17,8 @@ const MyAccount = () => {
         loading,
         error,
     } = useGetProfile(`${BASE_URL}/users/profile/me`);
+
+    console.log('userData.bookings: ', userData.bookings)
 
     const { dispatch } = useContext(AuthContext);
 
@@ -120,8 +123,9 @@ const MyAccount = () => {
                                         <h2 className='heading text-[30px]'>
                                             My bookings
                                         </h2>
-                                        {userData.bookings?.map((booking, i) => <div key={i}>booking id: {booking}</div>)}
-                                        {/* <MyBookings userData={userData}/> */}
+{/*                                         {userData.bookings?.map((booking, i) => <div key={i}>booking id: {booking}</div>)} */}
+                                        {userData.bookings?.map((booking, i) => <Booking key={i} id={booking}/>)}
+{/*                                         <MyBookings userData={userData}/> */}
                                     </div>
                                 )}
                                 {tab === 'settings' && (
