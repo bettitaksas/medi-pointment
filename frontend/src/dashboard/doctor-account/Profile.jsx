@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { BASE_URL, token } from '../../config/config';
 import uploadImageToCloudinary from '../../utils/uploadCloudinary';
 import { AiOutlineDelete } from 'react-icons/ai';
+import 'react-datepicker/dist/react-datepicker.css';
 
 import { toast } from 'react-toastify';
 
@@ -450,8 +451,20 @@ const Profile = ({ doctorData }) => {
                         <div key={index}>
                             <div className='grid grid-cols-2 md:grid-cols-4 gap-5 mb-[30px]'>
                                 <div>
+                                    <input
+                                        type='date'
+                                        name='day'
+                                        value={item.startingDate}
+                                        className='form__input'
+                                        onChange={(e) =>
+                                            handleTimeSlotChange(e, index)
+                                        }
+                                    />
+                                </div>
+
+                                {/*                                 <div>
                                     <p className='form__label'>Day*</p>
-                                    <select
+                                     <select
                                         onChange={(e) =>
                                             handleTimeSlotChange(e, index)
                                         }
@@ -474,7 +487,9 @@ const Profile = ({ doctorData }) => {
                                         </option>
                                         <option value='friday'>Friday</option>
                                     </select>
-                                </div>
+
+
+                                </div> */}
                                 <div>
                                     <p className='form__label'>
                                         Starting Time*

@@ -3,9 +3,11 @@ import { BASE_URL } from './../../config/config';
 import { useNavigate } from 'react-router-dom';
 import Profile from './Profile';
 import MyBookings from './MyBookings';
+import Booking from './Booking';
 import useGetProfile from '../../hooks/useFetchData';
 import HashLoader from 'react-spinners/HashLoader';
 import { AuthContext } from '../../context/authContext';
+import avatar from '../../assets/images/avatar-icon.png';
 
 const MyAccount = () => {
     const [tab, setTab] = useState('bookings');
@@ -15,6 +17,8 @@ const MyAccount = () => {
         loading,
         error,
     } = useGetProfile(`${BASE_URL}/users/profile/me`);
+
+    console.log('userData.bookings: ', userData.bookings)
 
     const { dispatch } = useContext(AuthContext);
 
@@ -46,11 +50,19 @@ const MyAccount = () => {
                         <div className=' px-[30px] pb-[50px] rounded-md  '>
                             <div className='flex items-center justify-center'>
                                 <figure className='w-[100px] h-[100px] rounded-full border-2 border-solid border-primaryColor overflow-hidden'>
-                                    <img
-                                        src={userData?.photo}
-                                        alt=''
-                                        className='w-full h-full rounded-full object-cover'
-                                    />
+                                    {userData.photo ? (
+                                        <img
+                                            src={userData?.photo}
+                                            alt='avatar-photo'
+                                            className='w-full h-full rounded-full object-cover'
+                                        />
+                                    ) : (
+                                        <img
+                                            src={avatar}
+                                            alt='avatar-photo'
+                                            className='w-full h-full rounded-full object-cover'
+                                        />
+                                    )}
                                 </figure>
                             </div>
 
@@ -111,7 +123,9 @@ const MyAccount = () => {
                                         <h2 className='heading text-[30px]'>
                                             My bookings
                                         </h2>
-                                        <MyBookings />
+{/*                                         {userData.bookings?.map((booking, i) => <div key={i}>booking id: {booking}</div>)} */}
+                                        {userData.bookings?.map((booking, i) => <Booking key={i} id={booking}/>)}
+{/*                                         <MyBookings userData={userData}/> */}
                                     </div>
                                 )}
                                 {tab === 'settings' && (

@@ -3,12 +3,15 @@ import DoctorCard from './../../components/Doctors/DoctorCard';
 import useFetchData from './../../hooks/useFetchData';
 import HashLoader from 'react-spinners/HashLoader';
 
-const MyBookings = () => {
+const MyBookings = (id) => {
+    console.log('booking id: ', id.id);
     const {
-        data: myAppointments,
+        data: bookings,
         loading,
         error,
-    } = useFetchData(`${BASE_URL}/users/appointments/my-appointments`);
+    } = useFetchData(`${BASE_URL}/bookings/${id.id}`);
+
+    console.log(bookings);
 
     return (
         <div>
@@ -26,11 +29,14 @@ const MyBookings = () => {
                 </div>
             )}
 
-            {!loading && !error && (
+            {!loading && !error && bookings != [] && (
                 <div className='grid grid-cols-1  lg:grid-cols-2 gap-5'>
-                    {myAppointments?.map((doctor) => (
+                    {/*                     {bookings?.map((doctor) => (
                         <DoctorCard doctor={doctor} key={doctor.id} />
-                    ))}
+                    ))} */}
+{/*                      {bookings?.map((id) => (
+                        {id}
+                    ))} */}
                 </div>
             )}
         </div>
