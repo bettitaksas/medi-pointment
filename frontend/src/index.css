@@ -10,7 +10,7 @@
 
 @layer components {
     .container {
-        @apply max-w-full w-[1440px] px-5 mx-auto;
+        @apply max-w-full /* w-[1440px] */ px-5 mx-auto;
     }
 
     .btn {
@@ -26,6 +26,7 @@
     }
 
     .header {
+        @apply h-full
 /*         @apply bg-[url('./assets/images/mask.png')] bg-no-repeat bg-center bg-cover w-full h-[100px] leading-[100px];
  */  
 }

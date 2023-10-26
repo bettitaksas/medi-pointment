@@ -254,7 +254,7 @@ const Home = () => {
                                 alt='about_img'
                             />
 
-                            <div className='w-[150px] lg:w-[248px] bg-white absolute bottom-[50px] left-0  md:bottom-[100px]  md:left-[20px] z-20 p-2 pb-3 lg:pt-4 lg:px-4 lg:pb-[26px] rounded-[10px]'>
+                            {/* <div className='w-[150px] lg:w-[248px] bg-white absolute bottom-[50px] left-0  md:bottom-[100px]  md:left-[20px] z-20 p-2 pb-3 lg:pt-4 lg:px-4 lg:pb-[26px] rounded-[10px]'>
                                 <div className='flex items-center justify-between'>
                                     <div className='flex items-center gap-[6px] lg:gap-3'>
                                         <p className='text-[10px] leading-[10px] lg:text-[14px] lg:leading-5 font-[600] text-headingColor'>
@@ -283,7 +283,7 @@ const Home = () => {
                                         Emily Johnson
                                     </h4>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
