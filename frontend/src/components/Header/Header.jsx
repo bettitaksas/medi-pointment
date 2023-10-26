@@ -77,8 +77,8 @@ const Header = () => {
                                         to={link.path}
                                         className={(navClass) =>
                                             navClass.isActive
-                                                ? 'text-purpleColor font-[600] text-[16px] leading-7'
-                                                : 'text-textColor font-[500] text-[16px] leading-7 hover:text-purpleColor'
+                                                ? 'text-pinkColor font-[600] text-[16px] leading-7'
+                                                : 'text-textColor font-[500] text-[16px] leading-7 hover:text-pinkColor'
                                         }
                                     >
                                         {link.display}

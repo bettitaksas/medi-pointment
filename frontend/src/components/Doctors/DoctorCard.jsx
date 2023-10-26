@@ -6,19 +6,20 @@ import { BsArrowRight } from 'react-icons/bs';
 
 const DoctorCard = ({ doctor }) => {
     const {
+        id,
         name,
         averageRating,
         totalRating,
-        totalPatients,
+        //totalPatients, //add it to the Shema, cause this field is not exist right now
         specialization,
         photo,
-        hospital,
+        //hospital,   //add it to the Shema, cause this field is not exist right now
     } = doctor;
 
     return (
-        <div className='p-3 lg:p-5 '>
-            <div>
-                <img className='w-full rounded-md' src={photo} alt='doctor-photo' />
+        <div className='p-3 lg:p-5 ' key={id}>
+            <div className='flex justify-center'>
+                <img className='w-40 rounded-md' src={photo} alt='doctor-photo' />
             </div>
             <h2 className='text-[18px] leading-[30px] lg:text-[26px] lg:leading-9 font-[700] text-headingColor mt-3 lg:mt-5'>
                 {name}
@@ -42,10 +43,12 @@ const DoctorCard = ({ doctor }) => {
             <div className='mt-[18px] lg:mt-5 flex items-center justify-between'>
                 <div>
                     <h3 className='text-[16px] leading-7 lg:text-[18px] lg:leading-[30px] font-[600] text-headingColor'>
-                        +{totalPatients} Patients
+{/*                         +{totalPatients} Patients */}
+                        50+ Patients
                     </h3>
                     <p className='text-[14px] leading-[24px] font-[400] text-textColor'>
-                        At {hospital}
+
+{/*                         At {hospital} */}
                     </p>
                 </div>
 
