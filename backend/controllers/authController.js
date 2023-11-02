@@ -14,6 +14,7 @@ export const registerUser = async (req, res) => {
         } else if (role === 'doctor') {
             user = await Doctor.findOne({ email });
         }
+        //mongooseban
 
         if (user) {
             return res.status(400).json({ message: 'User already exists' });

@@ -1,5 +1,8 @@
 import mongoose from 'mongoose';
 
+//transactions
+//avoid duplications
+//bookingSchema-ban tárolni a doctort és a patient-t is
 const bookingSchema = new mongoose.Schema(
     {
         doctor: {
