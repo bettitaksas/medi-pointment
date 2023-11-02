@@ -26,6 +26,7 @@ const reviewSchema = new mongoose.Schema(
     { timestamps: true }
 );
 
+//??
 reviewSchema.pre(/^find/, function (next) {
     this.populate({
         path: 'user',
@@ -35,6 +36,8 @@ reviewSchema.pre(/^find/, function (next) {
     next();
 });
 
+//write aggregate functions in compass
+//mongodb doc
 reviewSchema.statics.calcAverageRatings = async function (doctorId) {
     const stats = await this.aggregate([
         {

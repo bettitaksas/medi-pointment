@@ -15,9 +15,9 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 8000;
 
-const corsOptions = {
-    origin: true,
-};
+//const corsOptions = {
+  //  origin: true,
+//};
 
 app.get('/', (req, res) => {
     res.send('hello server');
@@ -37,7 +37,9 @@ const connectDB = async () => {
     }
 };
 
-app.use(cors(corsOptions));
+//configure a proxy
+//vit conf-ban
+//app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 

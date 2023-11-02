@@ -19,5 +19,3 @@ router.post(
 );
 
 export default router;
-
-//`${BASE_URL}/bookings/checkout-session/${doctorId}`

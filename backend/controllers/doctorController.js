@@ -1,12 +1,11 @@
 import Booking from '../models/BookingSchema.js';
 import Doctor from '../models/DoctorSchema.js';
 
-export const getOneDoctor = async (req, res) => {
+export const getOneDoctor = async (req, res, next) => {
     const id = req.params.id;
 
     try {
         const doctor = await Doctor.findById(id)
-            /*.populate('review')*/
             .select('-password');
 
         res.status(200).json({
@@ -15,6 +14,8 @@ export const getOneDoctor = async (req, res) => {
             data: doctor,
         });
     } catch (err) {
+        //next(err)
+
         res.status(404).json({
             success: false,
             message: 'Not found',

@@ -15,5 +15,6 @@ const UserSchema = new mongoose.Schema({
     bloodType: { type: String },
     bookings: [{type: mongoose.Types.ObjectId, ref: 'Booking'}]
 });
+//enbedded object
 
 export default mongoose.model('User', UserSchema);
