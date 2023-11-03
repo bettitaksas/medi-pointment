@@ -1,6 +1,6 @@
 # Medical Appointment Booking Website (MERN Stack)
 
-Welcome to the Medical Appointment Booking Website repository! This web application is built using the MERN (MongoDB, Express.js, React.js, Node.js) stack, and it allows users to book medical appointments with ease. The project also integrates JWT authentication for user security and a Stripe payment gateway for processing payments.
+Welcome to the Medical Appointment Booking Website repository! This web application is built using the MERN (MongoDB, Express.js, React.js, Node.js) stack, and it allows users to book medical appointments with ease. The project also integrates JWT authentication for user security. Additionally, I have implemented Tailwind CSS to ensure that the project is fully responsive across various devices and screen sizes. Another goal of this project to explore how to use PostgreSQL with Javascript, so I started to implement it with the help of TypeORM in a side branch.
 
 ## Table of Contents
 
@@ -15,7 +15,6 @@ Welcome to the Medical Appointment Booking Website repository! This web applicat
 
 - **User Authentication:** Secure user registration and login using JWT (JSON Web Tokens).
 - **Appointment Booking:** Users can easily search for available medical services and book appointments.
-- **Payment Integration:** Integrated Stripe payment gateway for seamless and secure payment processing.
 - **User Dashboard:** A user-friendly dashboard for managing appointments and personal information.
 - **Responsive Design:** Modern and mobile-responsive user interface for a seamless experience on all devices.
 
@@ -62,12 +61,12 @@ Follow these steps to set up the project locally:
 - **Frontend:** 
     - React.js
     - React Router for routing
-    - Stripe Elements for payment processing
+    - Tailwind
 - **Backend:** 
     - Node.js with Express.js
     - MongoDB for database storage
+    - PostgreSQL for database storage - in a side branch
     - JSON Web Tokens (JWT) for authentication
-    - Stripe API for payment handling
 
 ## Contributing
 Contributions are welcome! If you'd like to contribute to this project, please follow these guidelines:
