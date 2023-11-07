@@ -21,15 +21,18 @@ const Feedback = ({ reviews, totalRating }) => {
                     >
                         <div className='flex gap-3'>
                             <figure className='w-10 h-10 rounded-full'>
-                                <img
-                                    src={review.user.photo}
-                                    alt=''
-                                    className='w-full'
-                                />
+{/*                                 {review.user && review.user.photo && (
+                                    <img
+                                        src={review.user.photo}
+                                        alt=''
+                                        className='w-full'
+                                    />
+                                )} */}
                             </figure>
+
                             <div>
                                 <h5 className='text-[16px] leading-6 text-[#0067FF] font-bold'>
-                                    {review.user.name}
+{/*                                     {review.user.name} */}
                                 </h5>
                                 <p className='text-[14px] text-textColor leading-[22px]'>
                                     {formatDate(review.createdAt)}
